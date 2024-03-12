@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Sign In & Sign UP Padthai Shop</title>
+    <link rel="stylesheet" href="style_login.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <!---------------Sign In--------------->
+            <div class="box-login" id="login">
+                <form action="">
+                    <div class="title">
+                        <i class='bx bx-bowl-hot'></i>
+                        <h1>Padthai Shop</h1>
+                    </div> 
+                    <div class="description">
+                        <p>Enjoy for eat.</p>
+                    </div>
+                    
+                    <div class="input" id="email-login">
+                        <input type="text" placeholder="Email" required>
+                    </div>
+
+                    <div class="input" id="password-login">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" class="btn" id="btn-signin">SIGN IN</button>
+                </form>
+            </div>
+            <!---------------Sign Up--------------->
+            <div class="box-register" id="register">
+                <form action="">
+                    <div class="title">
+                        <i class='bx bxs-user' ></i>
+                        <h1>SIGN UP</h1>
+                    </div>
+                    <div class="description2">
+                        <p>Sign up to become a member with us.</p>
+                    </div>
+                    
+                    <div class="input" id="username-register">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+
+                    <div class="input" id="email-register">
+                        <input type="text" placeholder="Email" required>
+                    </div>
+
+                    <div class="input" id="password-register">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+
+                    <button type="submit" class="btn" id="btn-signup">SIGN UP</button>
+                </form>
+            </div>
+            <!--------------Swap Sign In or Sign Up---------------->
+            <div class="swap">
+                <a href="#" class="login" onclick="login()">Sign In</a>
+                <a href="#" class="register" onclick="register()">Sign Up</a>
+                <div class="btn-swap" id="btn"></div>
+            </div>
+        </div>
+    </div>
+<script>
+    var x = document.getElementById('login');
+    var y = document.getElementById('register');
+    var z = document.getElementById('btn');
+
+    function login(){
+        x.style.left = "40px";
+        y.style.left = "-400px";
+        z.style.left = "0px";
+    }
+    function register(){
+        x.style.left = "-400px";
+        y.style.left = "40px";
+        z.style.left = "150px";
+    }
+</script>
+</body>
+</html>
