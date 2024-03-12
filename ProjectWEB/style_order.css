@@ -51,11 +51,12 @@ select {
     box-shadow: 0 0 20px rgba(20, 20, 30, 0.25);
 }
 select option {
+    padding-left: 3%;
     background-color: #573924;
     letter-spacing: 100px;
 }
 select:hover {
-    padding: 7px 12px;
+    padding: 7px 20px;
     border: 5px solid black;
 }
 .selected {
