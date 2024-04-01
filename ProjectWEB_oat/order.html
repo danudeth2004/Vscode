@@ -72,10 +72,20 @@
                 document.getElementById("image7").style.display='none'
             }
         }
+        function checkDropdown(){
+            var selected = document.getElementById("noodles");
+            var selected2 = document.getElementById("meat");
+            var nn = document.getElementById("n1");
+            var nn2 = document.getElementById("n2");
+            nn.value = selected.value;
+            nn2.value = selected2.value;
+            alert(nn.value);
+        }
     </script>
 </head>
 <body>
     <div class="container">
+        <button onclick="checkDropdown()">opsaljdaiosdjaiosdas</button>
         <button class="back" onclick="Backward()"><i class='bx bxs-chevron-left' ></i></button>
         <div class="lang">
             <i class="fa-solid fa-globe" onclick=""></i>
@@ -97,13 +107,14 @@
                         <img src="./image/img_index/instant.jpg" id="image5" width="600" height="400" hidden="overflow">
                     </div>
                     <div class="select">
+                        <input type="hidden" id="n1" name="noodles" value="">
                         <select id="noodles" onchange="showImgNoodles()" width="90%">
-                            <option value="none" selected class="selected">Choose Noodles</option>
-                            <option value="Rice Stick Noodles">Rice Stick Noodles</option>
-                            <option value="Wide Rice Noodles">Wide Rice Noodles</option>
-                            <option value="Glass Noodles">Glass Noodles</option>
-                            <option value="Narrow rice noodles">Narrow rice noodles</option>
-                            <option value="Instant Noodles">Instant Noodles</option>
+                            <label for="n0"><option value="none" selected class="selected">Choose Noodles</option></label>
+                            <label for="n1"><option value="Rice Stick Noodles">Rice Stick Noodles</option></label>
+                            <label for="n2"><option value="Wide Rice Noodles">Wide Rice Noodles</option></label>
+                            <label for="n3"><option value="Glass Noodles">Glass Noodles</option></label>
+                            <label for="n4"><option value="Narrow rice noodles">Narrow rice noodles</option></label>
+                            <label for="n5"><option value="Instant Noodles">Instant Noodles</option></label>
                         </select>
                     </div>
                 </td>
@@ -113,10 +124,11 @@
                         <img src="./image/img_index/shrimp.jpg" id="image7" width="600px" height="400px" hidden="overflow">
                     </div>
                     <div class="select">
+                        <input type="hidden" id="n2" name="meat" value="">
                         <select id="meat" onchange="showImgMeat()" width="90%">
-                            <option value="none" selected class="selected">Choose Meats</option>
-                            <option value="Pork">Pork</option>
-                            <option value="Shrimp">Shrimp</option>
+                            <label for="n0"><option value="none" selected class="selected">Choose Meats</option></label>
+                            <label for="n2"><option value="Pork">Pork</option></label>
+                            <label for="n3"><option value="Shrimp">Shrimp</option></label>
                         </select>
                     </div>
                 </td>
