@@ -20,31 +20,31 @@
             else {
                 document.getElementById("image1").style.display='none'
             }
-            if(img == "Rice Stick Noodles"){
+            if(img == "2"){
                 document.getElementById("image1").style.display='inline-block'
             }
             else {
                 document.getElementById("image1").style.display='none'
             }
-            if(img == "Wide Rice Noodles"){
+            if(img == "3"){
                 document.getElementById("image2").style.display='inline-block'
             }
             else {
                 document.getElementById("image2").style.display='none'
             }
-            if(img == "Glass Noodles"){
+            if(img == "1"){
                 document.getElementById("image3").style.display='inline-block'
             }
             else {
                 document.getElementById("image3").style.display='none'
             }
-            if(img == "Narrow rice noodles"){
+            if(img == "4"){
                 document.getElementById("image4").style.display='inline-block'
             }
             else {
                 document.getElementById("image4").style.display='none'
             }
-            if(img == "Instant Noodles"){
+            if(img == "5"){
                 document.getElementById("image5").style.display='inline-block'
             }
             else {
@@ -59,13 +59,13 @@
             else {
                 document.getElementById("image6").style.display='none'
             }
-            if(img == "Pork"){
+            if(img == "1"){
                 document.getElementById("image6").style.display='inline-block'
             }
             else {
                 document.getElementById("image6").style.display='none'
             }
-            if(img == "Shrimp"){
+            if(img == "2"){
                 document.getElementById("image7").style.display='inline-block'
             }
             else {
@@ -75,16 +75,36 @@
         function checkDropdown(){
             var selected = document.getElementById("noodles");
             var selected2 = document.getElementById("meat");
+
             var nn = document.getElementById("n1");
             var nn2 = document.getElementById("n2");
+
             nn.value = selected.value;
             nn2.value = selected2.value;
-            alert(nn.value);
+
+            var currentDate = new Date();
+            var day = currentDate.getDate();
+            var month = currentDate.getMonth() + 1;
+            var year = currentDate.getFullYear();
+            var date = document.getElementById("date") 
+            date.value = year + "-" + month + "-" + day;
+
+            var currentTime = new Date();
+            var time = document.getElementById("time");
+            var hours = formatNumber(currentTime.getHours());
+            var minutes = formatNumber(currentTime.getMinutes());
+            var seconds = formatNumber(currentTime.getSeconds());
+            time.value = hours + ":" + minutes + ":" + seconds;
+        }
+        function formatNumber(number) {
+            return number < 10 ? '0' + number : number;
         }
     </script>
 </head>
 <body>
     <div class="container">
+        <input type="hidden" id="date" name="order_date" value="">
+        <input type="hidden" id="time" name="order_time" value="">
         <button onclick="checkDropdown()">opsaljdaiosdjaiosdas</button>
         <button class="back" onclick="Backward()"><i class='bx bxs-chevron-left' ></i></button>
         <div class="lang">
@@ -110,11 +130,11 @@
                         <input type="hidden" id="n1" name="noodles" value="">
                         <select id="noodles" onchange="showImgNoodles()" width="90%">
                             <label for="n0"><option value="none" selected class="selected">Choose Noodles</option></label>
-                            <label for="n1"><option value="Rice Stick Noodles">Rice Stick Noodles</option></label>
-                            <label for="n2"><option value="Wide Rice Noodles">Wide Rice Noodles</option></label>
-                            <label for="n3"><option value="Glass Noodles">Glass Noodles</option></label>
-                            <label for="n4"><option value="Narrow rice noodles">Narrow rice noodles</option></label>
-                            <label for="n5"><option value="Instant Noodles">Instant Noodles</option></label>
+                            <label for="n1"><option value="2">Rice Stick Noodles</option></label>
+                            <label for="n2"><option value="3">Wide Rice Noodles</option></label>
+                            <label for="n3"><option value="1">Glass Noodles</option></label>
+                            <label for="n4"><option value="4">Narrow rice noodles</option></label>
+                            <label for="n5"><option value="5">Instant Noodles</option></label>
                         </select>
                     </div>
                 </td>
@@ -124,11 +144,11 @@
                         <img src="./image/img_index/shrimp.jpg" id="image7" width="600px" height="400px" hidden="overflow">
                     </div>
                     <div class="select">
-                        <input type="hidden" id="n2" name="meat" value="">ไ
+                        <input type="hidden" id="n2" name="meat" value="">
                         <select id="meat" onchange="showImgMeat()" width="90%">
                             <label for="n0"><option value="none" selected class="selected">Choose Meats</option></label>
-                            <label for="n2"><option value="Pork">Pork</option></label>
-                            <label for="n3"><option value="Shrimp">Shrimp</option></label>
+                            <label for="n2"><option value="1">Pork</option></label>
+                            <label for="n3"><option value="2">Shrimp</option></label>
                         </select>
                     </div>
                 </td>
@@ -138,12 +158,12 @@
                     <div class="object4">
                         <div class="content">
                             <p>Bean sprout</p>
-                            <input type="checkbox" id="veg1" name="veg[]" value="Bean sprout"/>
+                            <input type="checkbox" id="veg1" name="veg[]" value="1"/>
                             <label for="veg1">
                                 <img src="./image/img_index/veg1.jpg" width="600px" height="250px"/>
                             </label>
                             <p>Chinese chive</p>
-                            <input type="checkbox" id="veg2" name="veg[]" value="Chinese chive"/>
+                            <input type="checkbox" id="veg2" name="veg[]" value="2"/>
                             <label for="veg2">
                                 <img src="./image/img_index/veg2.jpg"/ width="600px" height="250px">
                             </label>
@@ -154,24 +174,24 @@
                     <div class="object4">
                         <div class="content2">
                             <p>Roasted nuts</p>
-                            <input type="checkbox" id="top1" name="top[]" value="Roasted nuts"/>
+                            <input type="checkbox" id="top1" name="top[]" value="1"/>
                             <label for="top1">
                                 <img src="./image/img_index/top1.jpg"/ width="292.5px" height="220px">
                             </label>
                             <p>Dried Salted Prawn</p>
-                            <input type="checkbox" id="top2" name="top[]" value="Dried Salted Prawn"/>
+                            <input type="checkbox" id="top2" name="top[]" value="2"/>
                             <label for="top2">
                                 <img src="./image/img_index/top2.jpg"/ width="292.5px" height="220px">
                             </label>
                         </div>
                         <div class="content2">
                             <p>Crackling</p>
-                            <input type="checkbox" id="top3" name="top[]" value="Crackling"/>
+                            <input type="checkbox" id="top3" name="top[]" value="3"/>
                             <label for="top3">
                                 <img src="./image/img_index/top3.jpg"/ width="292.5px" height="220px">
                             </label>
                             <p>Bean curd</p>
-                            <input type="checkbox" id="top4" name="top[]" value="Bean curd"/>
+                            <input type="checkbox" id="top4" name="top[]" value="4"/>
                             <label for="top4">
                                 <img src="./image/img_index/top4.jpg"/ width="292.5px" height="220px">
                             </label>
